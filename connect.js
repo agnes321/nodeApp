@@ -2,6 +2,16 @@
  * Created by 1408876 on 21/11/2016.
  */
 
+    var mongodb = require('mongodb');
+    //and our HTTP server
+    var http = require('http');
+    //setup our port
+    var port = process.env.PORT || 1337;
+
+    var url = 'mongodb://AgneSkeiryte:609dcc19a@ds050879.mlab.com:50879/nodedatabase';
+
+    var MongoClient = mongodb.MongoClient;
+
 http.createServer(function(request, response) {
     response.writeHead(200, { 'Content-Type': 'text/plain' });
     response.write('Connecting \n');
@@ -25,4 +35,5 @@ http.createServer(function(request, response) {
     });
 
 }).listen(port);
+
 
