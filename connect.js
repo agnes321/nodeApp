@@ -1,10 +1,6 @@
 /**
  * Created by 1408876 on 21/11/2016.
  */
-//lets require/import the mongodb native drivers.
-http.createServer(function(request, response) {
-    response.writeHead(200, { 'Content-Type': 'text/plain' });
-    response.write('Connecting \n');
 
     var mongodb = require('mongodb');
     //and our HTTP server
@@ -25,14 +21,13 @@ http.createServer(function(request, response) {
         } else {
             //HURRAY!! We are connected. :)
             response.write('Connection established to' + url +"\n");
-
+    
             // do some work here with the database.
-
+    
             //Done Close connection
             db.close();
         }
         response.end('Finished, Connection closed \n');
     });
 
-}).listen(port);
 
